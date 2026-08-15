@@ -2,21 +2,21 @@
 
 **Sovereign deep tech, built from original research.**
 
-Zetako Compression Lab is the public research and engineering showcase for Zetako's lossless compression work.
+Zetako Compression Lab is the public research and engineering showcase for Zetako’s proprietary lossless compression technologies.
 
-We develop specialized compression architectures for three different problem classes: general-purpose data, blockchain infrastructure, and constrained embedded telemetry. The proprietary production implementations remain private; the public repositories focus on measurable engineering progress, reproducible benchmark methodology, integration models, and clearly scoped technical claims.
+We are developing three specialized compression lines for three different constraints: **general-purpose data**, **blockchain infrastructure**, and **embedded telemetry**. The production codec cores remain private; this GitHub organization publishes the engineering evidence around them — benchmarks, methodology, architecture, version evolution, integration experiments, and clearly scoped technical claims.
 
 **Luxembourg · [zetako.ai](https://zetako.ai/) · contact@zetako.ai**
 
 ---
 
-## Compression research lines
+## Research portfolio
 
-| Project | Focus | Public positioning |
+| Project | Focus | Public repository |
 |---|---|---|
-| **ZCaps** | General-purpose lossless compression | Adaptive contextual prediction and statistical entropy coding research |
-| **ZChain** | Blockchain-native lossless compression | Payload-aware compression for blockchain clients, validators, RPC, execution-layer and consensus data |
-| **ZNano** | Embedded telemetry compression | Lossless compression for metering, IoT, telemetry and constrained MCU environments |
+| **ZCaps** | General-purpose adaptive lossless compression research | [Zcaps-Adaptive-lossless-statistical-compressor](https://github.com/Zetako-Compression-Lab/Zcaps-Adaptive-lossless-statistical-compressor) |
+| **ZChain** | Blockchain-native lossless compression engine | [ZChain-blockchain-native-lossless-compression-engine](https://github.com/Zetako-Compression-Lab/ZChain-blockchain-native-lossless-compression-engine) |
+| **ZNano** | Lossless compression for embedded telemetry | [Znano-Structured-Telemetry-Compression](https://github.com/Zetako-Compression-Lab/Znano-Structured-Telemetry-Compression) |
 
 ---
 
@@ -24,17 +24,22 @@ We develop specialized compression architectures for three different problem cla
 
 ### General-purpose adaptive lossless compression research
 
-ZCaps explores a general-purpose compression architecture centered on **adaptive context modeling, prediction and statistical entropy coding** rather than a conventional dictionary-first design.
+ZCaps explores a general-purpose codec architecture built around **adaptive context modeling, prediction, and statistical entropy coding**.
 
-The public research record documents:
+The research direction is deliberately different from a conventional dictionary-first compressor: instead of primarily searching for repeated byte sequences, ZCaps continuously learns from the stream and models what is likely to occur next.
 
-- lossless validation on established public corpora;
+Public work includes:
+
+- exact lossless validation on established compression corpora;
 - compression-density and throughput measurements;
-- research profiles for balanced, fast and maximum-compression directions;
-- architecture explanations at a non-proprietary level;
-- the distinction between raw codec performance and complete product-path overhead.
+- adaptive context-modeling research;
+- Balanced / Fast / Max optimization directions;
+- architecture documentation at a non-proprietary level;
+- clear separation between codec-only speed and full product-path overhead.
 
-**Public repository:** [ZCaps](https://github.com/Zetako-Compression-Lab/Zcaps-Adaptive-lossless-statistical-compressor)
+**Positioning:** *General-purpose adaptive lossless compression research.*
+
+[Explore ZCaps →](https://github.com/Zetako-Compression-Lab/Zcaps-Adaptive-lossless-statistical-compressor)
 
 ---
 
@@ -42,22 +47,29 @@ The public research record documents:
 
 ### Blockchain-native lossless compression engine
 
-ZChain is built specifically for structured blockchain data paths rather than as a generic "compress everything" library.
+ZChain is designed for **structured blockchain data paths**, where the runtime already knows whether it is processing blocks, receipts, transactions, signatures, RPC payloads, account keys, consensus results, or storage records.
 
-Its public engineering history shows the evolution from the original v3 compatibility profile through v4 optimization, Speed_First, blockchain-aware models, schema-assisted experiments and the current Blockchain Engine direction.
+Rather than treating every payload as generic bytes, ZChain increasingly uses that structural knowledge to choose the right compression model for the serialization family being processed.
 
-The public repository includes dedicated benchmark and methodology pages for:
+Its public engineering history deliberately shows the evolution of the product:
 
-- Ethereum / Reth;
-- Solana mainnet RPC;
-- Agave validator integration experiments;
-- Cosmos / CometBFT;
-- selected codec comparisons;
-- version-to-version performance deltas and compatibility boundaries.
+**v3 → v4 → Speed_First → blockchain-aware models → schema-assisted models → current Blockchain Engine direction**
 
-The goal is simple: **reduce the bytes moved or stored by blockchain infrastructure while keeping reconstruction exact and processing cost low enough for the target path.**
+The public repository contains dedicated benchmark and methodology pages for:
 
-**Public repository:** [ZChain](https://github.com/Zetako-Compression-Lab/ZChain-blockchain-native-lossless-compression-engine)
+- **Ethereum / Reth**;
+- **Solana mainnet RPC**;
+- **Agave validator integration**;
+- **Cosmos / CometBFT**;
+- version-to-version performance deltas;
+- compatibility boundaries;
+- selected codec comparisons.
+
+The goal is straightforward: **reduce the bytes moved or stored by blockchain infrastructure while preserving exact reconstruction and keeping processing cost practical for the target path.**
+
+**Positioning:** *Blockchain-native lossless compression engine.*
+
+[Explore ZChain →](https://github.com/Zetako-Compression-Lab/ZChain-blockchain-native-lossless-compression-engine)
 
 ---
 
@@ -65,65 +77,85 @@ The goal is simple: **reduce the bytes moved or stored by blockchain infrastruct
 
 ### Lossless compression for embedded telemetry
 
-ZNano targets structured telemetry and constrained systems where bandwidth, flash, RAM and deterministic reconstruction all matter.
+ZNano targets **structured telemetry and constrained devices**, where bandwidth, flash, RAM, deterministic reconstruction, and implementation footprint all matter.
 
-The public evidence set covers metering and telemetry workloads, multi-frame processing, MCU-oriented footprint measurements and functional validation across Cortex-M class targets.
-
-Public documentation deliberately separates host benchmark timing from MCU runtime claims and distinguishes measured, calculated and target-dependent metrics.
+The public evidence set covers metering and telemetry payloads, multi-frame processing, host validation, MCU-oriented footprint measurements, and functional evidence across Cortex-M class targets.
 
 Typical domains include:
 
 - smart metering;
 - industrial telemetry;
+- IoT and LPWAN;
 - GNSS / positioning;
-- IoT and LPWAN payloads;
-- embedded systems with tight memory and transport constraints.
+- embedded systems with constrained memory and transport budgets.
 
-**Public repository:** [ZNano](https://github.com/Zetako-Compression-Lab/Znano-Structured-Telemetry-Compression)
+The documentation explicitly separates **host benchmark timing** from **MCU runtime claims**, and distinguishes measured, calculated, and target-dependent metrics.
+
+**Positioning:** *Lossless compression for embedded telemetry.*
+
+[Explore ZNano →](https://github.com/Zetako-Compression-Lab/Znano-Structured-Telemetry-Compression)
+
+---
+
+## Why three compression lines?
+
+Compression is not one problem.
+
+A blockchain validator, a general-purpose archive, and a Cortex-M telemetry device operate under very different constraints. Zetako Compression Lab therefore develops separate architectures instead of forcing one codec to compromise across every workload.
+
+| Constraint | ZCaps | ZChain | ZNano |
+|---|---:|---:|---:|
+| General-purpose data | **Primary** | Secondary | No |
+| Blockchain structure awareness | No | **Primary** | No |
+| Embedded / MCU constraints | No | Limited | **Primary** |
+| Adaptive statistical modeling | **Core research** | Used where relevant | Lightweight / constrained |
+| Throughput-sensitive infrastructure | Yes | **Primary** | Target-dependent |
+| Tiny implementation footprint | No | No | **Primary** |
 
 ---
 
 ## How we publish research
 
-The public GitHub organization is designed as an **evidence layer**, not as a source-code dump of the proprietary compression cores.
+This organization is an **evidence layer**, not a source-code dump of the proprietary codec cores.
 
-We aim to publish:
+We publish material that allows an external engineer, researcher, partner, or investor to understand what has been built and how the claims are supported:
 
 - reproducible benchmark methodology;
 - public datasets or dataset-fetch instructions where appropriate;
-- round-trip integrity evidence;
-- compression ratio and throughput together;
-- hardware/build context for performance measurements;
-- version evolution and engineering deltas;
-- integration architecture and clear readiness boundaries;
-- limitations and failed assumptions when they materially affect interpretation.
+- exact round-trip integrity evidence;
+- compression ratio and throughput reported together;
+- hardware and build context for performance measurements;
+- version evolution and measurable engineering deltas;
+- integration architecture and readiness boundaries;
+- limitations when they materially affect interpretation.
 
 We intentionally keep private:
 
 - proprietary codec core implementations;
-- protected production builds and release engineering;
-- internal tuning data and sensitive datasets;
+- production builds and release engineering;
+- internal tuning data;
+- sensitive or customer-specific datasets;
 - customer-specific integrations.
 
 ---
 
 ## Research principles
 
-**Lossless first.** Compression improvements are only valid when the original payload is reconstructed exactly.
+**Lossless first.** A compression improvement only counts when the original payload is reconstructed exactly.
 
-**Ratio and speed belong together.** A smaller output with unacceptable latency is a different engineering tradeoff, not automatically a better result.
+**Ratio and speed belong together.** A smaller output with unacceptable latency is not automatically a better engineering result.
 
-**Native codec and integration overhead are measured separately.** Build profile, I/O, hashing, wrappers and host application behavior can materially change observed throughput.
+**Native codec and integration overhead are separate measurements.** Build profile, wrappers, I/O, hashing, serialization, and host application behavior can materially affect observed throughput.
 
-**Claims stay scoped.** A benchmark on one blockchain payload, MCU target or corpus is not presented as a universal guarantee.
+**Claims stay scoped.** A result on one corpus, blockchain payload, MCU target, or hardware configuration is not presented as a universal guarantee.
 
-**Continuous iteration matters.** Public version histories are intended to show measurable progress in compression density, throughput, compatibility and deployment readiness.
+**Continuous iteration matters.** Public version histories are intended to show measurable progress in compression density, throughput, compatibility, and deployment readiness.
 
 ---
 
 ## About Zetako
 
-Zetako S.à r.l. is a Luxembourg deep-tech company developing sovereign software and original data-compression technologies.
+**Zetako S.à r.l.** is a Luxembourg deep-tech company developing sovereign software and original data-compression technologies.
 
 **Website:** [zetako.ai](https://zetako.ai/)  
 **Contact:** contact@zetako.ai  
@@ -131,4 +163,4 @@ Zetako S.à r.l. is a Luxembourg deep-tech company developing sovereign software
 
 ---
 
-<sub>Public benchmark figures in the linked repositories represent specific test environments, datasets, codec profiles and build configurations. They should always be interpreted together with their documented methodology and scope.</sub>
+<sub>Public benchmark figures in the linked repositories represent specific test environments, datasets, codec profiles, and build configurations. They should always be interpreted together with their documented methodology and scope.</sub>
