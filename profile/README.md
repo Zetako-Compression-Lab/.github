@@ -1,28 +1,80 @@
 # Zetako Compression Lab
 
-**Sovereign deep tech, built from original research.**
+**Sovereign software infrastructure and original deep-tech research.**
 
-Zetako Compression Lab is the public research and engineering showcase for Zetako’s proprietary lossless compression technologies.
+Zetako Compression Lab is the public engineering and research showcase for **Zetako S.à r.l.**
 
-We are developing three specialized compression lines for three different constraints: **general-purpose data**, **blockchain infrastructure**, and **embedded telemetry**. The production codec cores remain private; this GitHub organization publishes the engineering evidence around them — benchmarks, methodology, architecture, version evolution, integration experiments, and clearly scoped technical claims.
+The organization documents two complementary areas of work:
+
+- **ZNode** — sovereign workspace infrastructure for private organizational communication, collaboration, governance and controlled operations;
+- **Zetako compression research** — proprietary lossless-compression technologies for blockchain infrastructure, general-purpose data and embedded telemetry.
+
+Production source code and proprietary codec cores remain private. This GitHub organization publishes the engineering evidence around the products: architecture, methodology, benchmark results, deployment models, product evolution, operational boundaries, integration experiments and clearly scoped technical claims.
 
 **Luxembourg · [zetako.ai](https://zetako.ai/) · contact@zetako.ai**
 
 ---
 
-## Research portfolio
+## Engineering portfolio
 
 | Project | Focus | Public repository |
 |---|---|---|
+| **ZNode** | Sovereign workspace infrastructure | [Znode-sovereign-workspace-infrastructure](https://github.com/Zetako-Compression-Lab/Znode-sovereign-workspace-infrastructure) |
 | **ZCaps** | General-purpose adaptive lossless compression research | [Zcaps-Adaptive-lossless-statistical-compressor](https://github.com/Zetako-Compression-Lab/Zcaps-Adaptive-lossless-statistical-compressor) |
 | **ZChain** | Blockchain-native lossless compression engine | [ZChain-blockchain-native-lossless-compression-engine](https://github.com/Zetako-Compression-Lab/ZChain-blockchain-native-lossless-compression-engine) |
 | **ZNano** | Lossless compression for embedded telemetry | [Znano-Structured-Telemetry-Compression](https://github.com/Zetako-Compression-Lab/Znano-Structured-Telemetry-Compression) |
 
 ---
 
-## ZCaps
+## ZNode
 
-### General-purpose adaptive lossless compression research
+### Sovereign workspace infrastructure
+
+ZNode is Zetako's **self-hosted, single-node sovereign workspace** for organizations that want to retain control over communications, collaboration, data, administration and operational access.
+
+The platform combines product surfaces such as:
+
+- direct and group messaging;
+- workspace and file collaboration;
+- voice, video and meetings;
+- administrative and policy controls;
+- audit and security event records;
+- compliance-oriented governance;
+- controlled support and maintenance models;
+- agent-ready infrastructure with scoped execution, visible principals and auditability.
+
+The public ZNode repository is an **engineering evidence layer**, not the proprietary application source repository.
+
+It currently documents:
+
+- product evolution;
+- single-node architecture and deployment boundaries;
+- reference deployment profile;
+- SQLite + local-filesystem data model;
+- operating and support models;
+- Compliance Center and governance model;
+- security and test evidence;
+- performance methodology;
+- live external-vs-backend latency decomposition;
+- future capacity, SFU, storage and pilot benchmark campaigns.
+
+Current public engineering evidence includes a **1,613-test automated suite**, **327 HTTP routes**, **6 read-only agent tools**, **9 scoped compliance export data types**, and an instrumented live-development latency baseline that separates external TCP/TLS/network time from ZNode application processing.
+
+The supported V1 profile is intentionally **single-node by design**: one controlled deployment boundary, local transactional state, local filesystem storage, dedicated Z-Connect/SFU services where enabled, and explicit backup/recovery ownership.
+
+**Positioning:** *Sovereign workspace infrastructure.*
+
+[Explore ZNode →](https://github.com/Zetako-Compression-Lab/Znode-sovereign-workspace-infrastructure)
+
+---
+
+## Compression research portfolio
+
+Zetako develops three specialized compression lines for three different engineering constraints: **general-purpose data**, **blockchain infrastructure**, and **embedded telemetry**.
+
+### ZCaps
+
+#### General-purpose adaptive lossless compression research
 
 ZCaps explores a general-purpose codec architecture built around **adaptive context modeling, prediction, and statistical entropy coding**.
 
@@ -43,9 +95,9 @@ Public work includes:
 
 ---
 
-## ZChain
+### ZChain
 
-### Blockchain-native lossless compression engine
+#### Blockchain-native lossless compression engine
 
 ZChain is designed for **structured blockchain data paths**, where the runtime already knows whether it is processing blocks, receipts, transactions, signatures, RPC payloads, account keys, consensus results, or storage records.
 
@@ -73,9 +125,9 @@ The goal is straightforward: **reduce the bytes moved or stored by blockchain in
 
 ---
 
-## ZNano
+### ZNano
 
-### Lossless compression for embedded telemetry
+#### Lossless compression for embedded telemetry
 
 ZNano targets **structured telemetry and constrained devices**, where bandwidth, flash, RAM, deterministic reconstruction, and implementation footprint all matter.
 
@@ -101,7 +153,7 @@ The documentation explicitly separates **host benchmark timing** from **MCU runt
 
 Compression is not one problem.
 
-A blockchain validator, a general-purpose archive, and a Cortex-M telemetry device operate under very different constraints. Zetako Compression Lab therefore develops separate architectures instead of forcing one codec to compromise across every workload.
+A blockchain validator, a general-purpose archive, and a Cortex-M telemetry device operate under very different constraints. Zetako therefore develops separate architectures instead of forcing one codec to compromise across every workload.
 
 | Constraint | ZCaps | ZChain | ZNano |
 |---|---:|---:|---:|
@@ -114,48 +166,57 @@ A blockchain validator, a general-purpose archive, and a Cortex-M telemetry devi
 
 ---
 
-## How we publish research
+## How we publish engineering evidence
 
-This organization is an **evidence layer**, not a source-code dump of the proprietary codec cores.
+This organization is an **evidence layer**, not a source-code dump of proprietary implementations.
 
-We publish material that allows an external engineer, researcher, partner, or investor to understand what has been built and how the claims are supported:
+We publish material that allows an external engineer, researcher, customer, security team, partner, or investor to understand what has been built and how the claims are supported:
 
+- architecture and deployment boundaries;
 - reproducible benchmark methodology;
 - public datasets or dataset-fetch instructions where appropriate;
-- exact round-trip integrity evidence;
+- exact round-trip integrity evidence for compression research;
 - compression ratio and throughput reported together;
 - hardware and build context for performance measurements;
 - version evolution and measurable engineering deltas;
 - integration architecture and readiness boundaries;
+- security and governance evidence at a non-sensitive level;
 - limitations when they materially affect interpretation.
 
 We intentionally keep private:
 
+- proprietary ZNode production source code;
 - proprietary codec core implementations;
-- production builds and release engineering;
+- production credentials and secrets;
+- customer data and customer-specific deployment details;
+- exploit-relevant security implementation details;
 - internal tuning data;
 - sensitive or customer-specific datasets;
-- customer-specific integrations.
+- protected commercial integrations.
 
 ---
 
-## Research principles
+## Engineering principles
 
-**Lossless first.** A compression improvement only counts when the original payload is reconstructed exactly.
+**Measured claims should be inspectable.** Public performance claims should retain enough methodology and scope to be interpreted correctly.
+
+**Sovereignty requires operational clarity.** Deployment boundaries, data ownership, support access and recovery responsibilities should be explicit.
+
+**Lossless means exact reconstruction.** A compression improvement only counts when the original payload is reconstructed exactly.
 
 **Ratio and speed belong together.** A smaller output with unacceptable latency is not automatically a better engineering result.
 
-**Native codec and integration overhead are separate measurements.** Build profile, wrappers, I/O, hashing, serialization, and host application behavior can materially affect observed throughput.
+**Native codec and integration overhead are separate measurements.** Build profile, wrappers, I/O, hashing, serialization, network paths and host application behavior can materially affect observed throughput or latency.
 
-**Claims stay scoped.** A result on one corpus, blockchain payload, MCU target, or hardware configuration is not presented as a universal guarantee.
+**Claims stay scoped.** A result on one deployment, corpus, blockchain payload, MCU target or hardware configuration is not presented as a universal guarantee.
 
-**Continuous iteration matters.** Public version histories are intended to show measurable progress in compression density, throughput, compatibility, and deployment readiness.
+**Continuous iteration matters.** Public version histories are intended to show measurable progress in performance, capability, compatibility, governance and deployment readiness.
 
 ---
 
 ## About Zetako
 
-**Zetako S.à r.l.** is a Luxembourg deep-tech company developing sovereign software and original data-compression technologies.
+**Zetako S.à r.l.** is a Luxembourg deep-tech company developing sovereign software infrastructure and proprietary data-compression technologies.
 
 **Website:** [zetako.ai](https://zetako.ai/)  
 **Contact:** contact@zetako.ai  
@@ -163,4 +224,4 @@ We intentionally keep private:
 
 ---
 
-<sub>Public benchmark figures in the linked repositories represent specific test environments, datasets, codec profiles, and build configurations. They should always be interpreted together with their documented methodology and scope.</sub>
+<sub>Public benchmark and operational figures in the linked repositories represent specific test environments, datasets, product versions, profiles and measurement boundaries. They should always be interpreted together with their documented methodology and scope.</sub>
